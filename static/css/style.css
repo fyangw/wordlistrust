@@ -1,0 +1,35 @@
+body { font-family: Arial, sans-serif; }
+#card-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+#current-card {
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px #00000019;
+    padding: 20px;
+    min-height: 200px;
+}
+#navigation {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    padding: 20px 0;
+}
+button, button:hover {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    background: #007bff;
+    color: white;
+}
+button:hover { background: #0056b3; }
+#counter {
+    color: #666;
+    font-size: 0.9em;
+    margin-top: 15px;
+}

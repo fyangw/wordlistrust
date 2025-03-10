@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>词汇表</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>词汇表</h1>
+    <div id="card-container">
+        <div id="current-card">
+            <h2 id="current-term"></h2>
+            <p id="current-definition"></p>
+            <div id="counter"></div>
+        </div>
+        <div id="navigation">
+            <button id="prev-btn">← 上一词</button>
+            <button id="next-btn">下一词 →</button>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('load', async () => {
+            try {
+                const response = await fetch('/words');
+                const words = await response.json();
+                
+                let currentIndex = 0;
+                const termElement = document.getElementById('current-term');
+                const definitionElement = document.getElementById('current-definition');
+                const counterElement = document.getElementById('counter');
+                
+                function updateCard() {
+                    termElement.textContent = words[currentIndex].term;
+                    definitionElement.textContent = words[currentIndex].definition;
+                    counterElement.textContent = `第 ${currentIndex + 1} 个词，共 ${words.length} 个`;
+                }
+                
+                document.getElementById('prev-btn').addEventListener('click', () => {
+                    currentIndex = currentIndex > 0 ? currentIndex - 1 : 0;
+                    updateCard();
+                });
+                
+                document.getElementById('next-btn').addEventListener('click', () => {
+                    currentIndex = currentIndex < words.length - 1 ? currentIndex + 1 : words.length - 1;
+                    updateCard();
+                });
+                
+                updateCard();
+            } catch (error) {
+                console.error('获取数据失败:', error);
+            }
+        });
+    </script>
+</body>
+</html>
