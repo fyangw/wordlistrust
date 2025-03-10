@@ -1,1 +1,12 @@
-[{"term":"hello","definition":"你好"},{"term":"world","definition":"世界"}]
+[
+  {"term":"subjects", "definition":"学科"},
+  {"term":"maths", "definition":"数学"},
+  {"term":"science", "definition":"科学"},
+  {"term":"music", "definition":"音乐"},
+  {"term":"art", "definition":"美术"},
+  {"term":"PE", "definition":"体育"},
+  {"term":"Chinese", "definition":"语文"},
+  {"term":"English", "definition":"英语"},
+  {"term":"classroom", "definition":"教室"},
+  {"term":"textbook", "definition":"课本"}
+]
